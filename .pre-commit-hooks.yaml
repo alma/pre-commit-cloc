@@ -3,4 +3,4 @@
   description: Check if file contain at least more than 0% of comment
   entry: pre_commit_hooks/shell-cloc.sh
   language: script
-  types: [shell]
+  types: [python]
