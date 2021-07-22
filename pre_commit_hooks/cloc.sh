@@ -8,8 +8,19 @@ DEBUG=${DEBUG:=0}
 [[ "$DEBUG" = "1" ]] && set -o xtrace
 
 if ! command which cloc &>/dev/null; then
-  >&2 echo 'cloc command not found'
+  >&2 echo 'cloc command not found, please install it'
   exit 1
 fi
 
-cloc "$@"
+if ! command which jq &>/dev/null; then
+  >&2 echo 'jq command not found, please install it'
+  exit 1
+fi
+
+
+if ((cloc --json --git "$@" | jq '.SUM.comment')) = 0; then
+    >&2 echo 'file contains 0 comment'
+    exit 1
+fi
+
+exit 0
