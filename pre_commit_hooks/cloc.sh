@@ -18,7 +18,7 @@ if ! command which jq &>/dev/null; then
 fi
 
 if [[ "$(cloc --json "$@" | jq '.SUM.comment')" -eq 0 ]]; then
-    >&2 echo "file $@ contains 0 comment"
+    >&2 echo "file $@ contains 0 comments"
     exit 1
 fi
 

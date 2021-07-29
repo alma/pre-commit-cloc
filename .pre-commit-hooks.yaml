@@ -1,6 +1,6 @@
 - id: cloc
-  name: Count comment in files
-  description: Check if file contain at least more than 0% of comment
+  name: Count comments in files
+  description: Check if file contains at least more than 0% of comments
   entry: pre_commit_hooks/cloc.sh
   language: script
   types: [python]
