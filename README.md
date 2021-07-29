@@ -10,7 +10,7 @@ Add the following to your
   - repo: https://github.com/alma/pre-commit-cloc
     rev: v0.0.5
     hooks:
-    - id: cloc
+    - id: check-comments
 ```
 
 ## Dependencies
